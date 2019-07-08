@@ -11,6 +11,9 @@
               formControlName="accountType"
               [value]="type"> {{ type }}
           </div>
+          <span
+            *ngIf="!signupForm.get('accountType').valid && signupForm.get('accountType').touched"
+            class="form-text text-muted">Please enter an Account Type!</span>
         </div>
 
         <div class="form-group">
@@ -110,6 +113,12 @@
         <button
         class="btn btn-primary"
         type="submit">Submit</button>
+
+        <br>
+        <button
+          class="btn btn-danger"
+          type="button"
+          (click)="onReset()">Reset</button>
 
       </form>
     </div>

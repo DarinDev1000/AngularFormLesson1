@@ -60,4 +60,8 @@ export class AppComponent implements OnInit {
     const control = new FormControl(null, Validators.required);
     (this.signupForm.get('skills') as FormArray).push(control);
   }
+
+  onReset() {
+    this.signupForm.reset();
+  }
 }
