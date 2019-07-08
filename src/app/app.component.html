@@ -112,7 +112,8 @@
             class="form-text text-muted">Please enter valid data!</span>
         <button
         class="btn btn-primary"
-        type="submit">Submit</button>
+        type="submit"
+        [disabled]="!signupForm.valid">Submit</button>
 
         <br>
         <button
