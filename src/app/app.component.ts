@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
       'streetAddress': new FormControl(null),
       'city': new FormControl(null),
       'country': new FormControl(null, Validators.required),
-      'zipCode': new FormControl(null, Validators.pattern("[0-9]*"))
+      'zipCode': new FormControl(null, Validators.pattern("[0-9]*")),
+      'skills': new FormArray([])
     });
 
     // Subscribe to value changes
@@ -53,5 +54,10 @@ export class AppComponent implements OnInit {
   onSubmit() {
     console.log(this.signupForm);
     console.log(this.signupForm.value);
+  }
+
+  onAddSkill() {
+    const control = new FormControl(null, Validators.required);
+    (this.signupForm.get('skills') as FormArray).push(control);
   }
 }

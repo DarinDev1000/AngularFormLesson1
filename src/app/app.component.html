@@ -90,6 +90,18 @@
             class="form-text text-muted">Please enter a Zip Code!</span>
         </div>
 
+        <div formArrayName="skills">
+          <h4>Your Skills</h4>
+          <button
+            class="btn btn-secondary"
+            type="button"
+            (click)="onAddSkill()">Add Skill</button>
+          <div class="form-group"
+          *ngFor="let skillControl of signupForm.get('skills').controls; let i = index">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div>
+        </div>
+
         <br>
 
         <span
