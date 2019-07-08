@@ -33,21 +33,21 @@ export class AppComponent implements OnInit {
       (status) => console.log(status)
     );
 
-     // Set form values
-    this.signupForm.setValue({
-      'accountType': 'Personal',
-      'name': 'Darin',
-      'email': 'darin@example.com',
-      'streetAddress': '1212 some street',
-      'city': 'Modesto',
-      'country': 'United States',
-      'zipCode': '95358'
-    });
+    //  // Set form values
+    // this.signupForm.setValue({
+    //   'accountType': 'Personal',
+    //   'name': 'Darin',
+    //   'email': 'darin@example.com',
+    //   'streetAddress': '1212 some street',
+    //   'city': 'Modesto',
+    //   'country': 'United States',
+    //   'zipCode': '95358'
+    // });
 
-    // Update/patch form values
-    this.signupForm.patchValue({
-      'email': 'darin@second-example.com'
-    });
+    // // Update/patch form values
+    // this.signupForm.patchValue({
+    //   'email': 'darin@second-example.com'
+    // });
   }
 
   onSubmit() {
