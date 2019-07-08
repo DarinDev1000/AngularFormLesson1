@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
       // Do not call the Validators. Only pass the reference
       'accountType': ['Personal', Validators.required],
       'name': [null, Validators.required],
-      'email': [null, [Validators.required, Validators.email]],
+      'email': [null, [Validators.required, Validators.email, Validators.maxLength(20)]],
       'streetAddress': [null], // or ''
       'city': [null],
       'country': [null, Validators.required],
