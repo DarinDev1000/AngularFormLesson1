@@ -11,5 +11,7 @@ export class AppComponent implements OnInit {
   accountType = ['Personal', 'Business'];
   signupForm: FormGroup;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.signupForm = new FormGroup({});
+  }
 }
