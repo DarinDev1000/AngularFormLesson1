@@ -2,6 +2,13 @@
   margin-top: 30px;
 }
 
+.form-box {
+  padding: 20px;
+  border: 1px solid #CCC;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0px 0px #AAA;
+}
+
 input.ng-invalid.ng-touched {
   border: 1px solid red;
 }

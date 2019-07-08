@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12 col-md-8">
+  <div class="row justify-content-md-center">
+    <div class="form-box col-12 col-md-8">
       <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 
         <div class="form-group">
@@ -16,53 +16,58 @@
             class="form-text text-muted">Please enter an Account Type!</span>
         </div>
 
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            formControlName="name"
-            class="form-control">
-          <span
-            *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched"
-            class="form-text text-muted">Please enter a Name!</span>
+        <div class="row">
+          <div class="form-group col-12 col-md-6">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              class="form-control">
+            <span
+              *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched"
+              class="form-text text-muted">Please enter a Name!</span>
+          </div>
+
+          <div class="form-group col-12 col-md-6">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              formControlName="email"
+              class="form-control">
+              <span
+              *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
+              class="form-text text-muted">Please enter a valid Email!</span>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            formControlName="email"
-            class="form-control">
-            <span
-            *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
-            class="form-text text-muted">Please enter a valid Email!</span>
+        <div class="row">
+          <div class="form-group col-12 col-md-6">
+            <label for="streetAddress">Street Address</label>
+            <input
+              type="text"
+              id="streetAddress"
+              formControlName="streetAddress"
+              class="form-control">
+              <span
+              *ngIf="!signupForm.get('streetAddress').valid && signupForm.get('streetAddress').touched"
+              class="form-text text-muted">Please enter a Street Address!</span>
+          </div>
+
+          <div class="form-group col-12 col-md-6">
+            <label for="city">City</label>
+            <input
+              type="text"
+              id="city"
+              formControlName="city"
+              class="form-control">
+              <span
+              *ngIf="!signupForm.get('city').valid && signupForm.get('city').touched"
+              class="form-text text-muted">Please enter a City!</span>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="streetAddress">Street Address</label>
-          <input
-            type="text"
-            id="streetAddress"
-            formControlName="streetAddress"
-            class="form-control">
-            <span
-            *ngIf="!signupForm.get('streetAddress').valid && signupForm.get('streetAddress').touched"
-            class="form-text text-muted">Please enter a Street Address!</span>
-        </div>
-
-        <div class="form-group">
-          <label for="city">City</label>
-          <input
-            type="text"
-            id="city"
-            formControlName="city"
-            class="form-control">
-            <span
-            *ngIf="!signupForm.get('city').valid && signupForm.get('city').touched"
-            class="form-text text-muted">Please enter a City!</span>
-        </div>
 
         <div class="form-group">
           <label for="country">Country</label>
