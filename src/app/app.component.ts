@@ -63,5 +63,12 @@ export class AppComponent implements OnInit {
 
   onReset() {
     this.signupForm.reset();
+    this.clearFormArray(this.signupForm.get('skills') as FormArray);
+  }
+
+  clearFormArray = (formArray: FormArray) => {
+    while (formArray.length !== 0) {
+      formArray.removeAt(0);
+    }
   }
 }
