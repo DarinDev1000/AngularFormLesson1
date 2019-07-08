@@ -20,6 +20,9 @@
             id="name"
             formControlName="name"
             class="form-control">
+          <span
+            *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched"
+            class="form-text text-muted">Please enter a Name!</span>
         </div>
 
         <div class="form-group">
@@ -29,6 +32,9 @@
             id="email"
             formControlName="email"
             class="form-control">
+            <span
+            *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
+            class="form-text text-muted">Please enter a valid Email!</span>
         </div>
 
         <div class="form-group">
@@ -38,6 +44,9 @@
             id="streetAddress"
             formControlName="streetAddress"
             class="form-control">
+            <span
+            *ngIf="!signupForm.get('streetAddress').valid && signupForm.get('streetAddress').touched"
+            class="form-text text-muted">Please enter a Street Address!</span>
         </div>
 
         <div class="form-group">
@@ -47,6 +56,9 @@
             id="city"
             formControlName="city"
             class="form-control">
+            <span
+            *ngIf="!signupForm.get('city').valid && signupForm.get('city').touched"
+            class="form-text text-muted">Please enter a City!</span>
         </div>
 
         <div class="form-group">
@@ -61,6 +73,9 @@
             <option>Mexico</option>
             <option>Other</option>
           </select>
+          <span
+            *ngIf="!signupForm.get('country').valid && signupForm.get('country').touched"
+            class="form-text text-muted">Please enter a Country!</span>
         </div>
 
         <div class="form-group">
@@ -70,8 +85,16 @@
             id="zipCode"
             formControlName="zipCode"
             class="form-control">
+            <span
+            *ngIf="!signupForm.get('zipCode').valid && signupForm.get('zipCode').touched"
+            class="form-text text-muted">Please enter a Zip Code!</span>
         </div>
 
+        <br>
+
+        <span
+            *ngIf="!signupForm.valid && signupForm.touched"
+            class="form-text text-muted">Please enter valid data!</span>
         <button
         class="btn btn-primary"
         type="submit">Submit</button>
