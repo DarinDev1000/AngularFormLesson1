@@ -61,12 +61,12 @@ export class AppComponent implements OnInit {
   }
 
   onAddSkill() {
-    const control = this.fb.control(null, Validators.required);
-    const skills = this.signupForm.get('skills') as FormArray;
-    skills.push(control);
+    // One Line
+    (this.signupForm.get('skills') as FormArray).push(this.fb.control(null, Validators.required));
 
-    // OR
-    // (this.signupForm.get('skills') as FormArray).push(this.fb.control(null, Validators.required));
+    // const control = this.fb.control(null, Validators.required);
+    // const skills = this.signupForm.get('skills') as FormArray;
+    // skills.push(control);
   }
 
   onReset() {
