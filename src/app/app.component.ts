@@ -22,6 +22,16 @@ export class AppComponent implements OnInit {
       'country': new FormControl(null, Validators.required),
       'zipCode': new FormControl(null, Validators.pattern("[0-9]*"))
     });
+
+    // Subscribe to value changes
+    // this.signupForm.valueChanges.subscribe(
+    //   (value) => console.log(value)
+    // );
+
+    // Subscribe to valid status changes
+    this.signupForm.statusChanges.subscribe(
+      (status) => console.log(status)
+    );
   }
 
   onSubmit() {
