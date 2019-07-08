@@ -22,4 +22,9 @@ export class AppComponent implements OnInit {
       'zipCode': new FormControl(null)
     });
   }
+
+  onSubmit() {
+    console.log(this.signupForm);
+    console.log(this.signupForm.value);
+  }
 }
