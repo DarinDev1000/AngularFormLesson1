@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,17 +11,19 @@ export class AppComponent implements OnInit {
   accountType = ['Personal', 'Business'];
   signupForm: FormGroup;
 
+  constructor(private fb: FormBuilder) { }
+
   ngOnInit() {
-    this.signupForm = new FormGroup({
+    this.signupForm = this.fb.group({
       // Do not call the Validators. Only pass the reference
-      'accountType': new FormControl('Personal', Validators.required),
-      'name': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'streetAddress': new FormControl(null),
-      'city': new FormControl(null),
-      'country': new FormControl(null, Validators.required),
-      'zipCode': new FormControl(null, Validators.pattern("[0-9]*")),
-      'skills': new FormArray([])
+      'accountType': ['Personal', Validators.required],
+      'name': [null, Validators.required],
+      'email': [null, [Validators.required, Validators.email, Validators.maxLength(20)]],
+      'streetAddress': [null], // or ''
+      'city': [null],
+      'country': [null, Validators.required],
+      'zipCode': [null, Validators.pattern("[0-9]*")],
+      'skills': this.fb.array([])
     });
 
     // Subscribe to value changes
@@ -42,7 +44,8 @@ export class AppComponent implements OnInit {
     //   'streetAddress': '1212 some street',
     //   'city': 'Modesto',
     //   'country': 'United States',
-    //   'zipCode': '95358'
+    //   'zipCode': '95358',
+    //   'skills': []
     // });
 
     // // Update/patch form values
@@ -54,11 +57,16 @@ export class AppComponent implements OnInit {
   onSubmit() {
     console.log(this.signupForm);
     console.log(this.signupForm.value);
+    this.onReset();
   }
 
   onAddSkill() {
-    const control = new FormControl(null, Validators.required);
-    (this.signupForm.get('skills') as FormArray).push(control);
+    // One Line
+    (this.signupForm.get('skills') as FormArray).push(this.fb.control(null, Validators.required));
+
+    // const control = this.fb.control(null, Validators.required);
+    // const skills = this.signupForm.get('skills') as FormArray;
+    // skills.push(control);
   }
 
   onReset() {
