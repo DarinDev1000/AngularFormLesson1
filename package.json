@@ -8,7 +8,8 @@
     "buildp": "ng build --prod --output-path ./dist/prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "aws s3 cp ./dist/prod/ s3://host-website-on-aws/ --profile darindev1000 --recursive"
   },
   "private": true,
   "dependencies": {
