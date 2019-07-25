@@ -107,7 +107,7 @@
               (click)="onAddSkill()">Add Skill</button>
           </div>
           <div class="form-group"
-          *ngFor="let skillControl of signupForm.get('skills').controls; let i = index">
+          *ngFor="let skillControl of skillFormArea.controls; let i = index">
             <input type="text" class="form-control" [formControlName]="i">
           </div>
         </div>

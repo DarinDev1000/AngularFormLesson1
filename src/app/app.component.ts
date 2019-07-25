@@ -79,4 +79,8 @@ export class AppComponent implements OnInit {
       formArray.removeAt(0);
     }
   }
+
+  get skillFormArea() {
+    return this.signupForm.get('skills') as FormArray;
+  }
 }
