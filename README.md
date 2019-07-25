@@ -1,5 +1,10 @@
 # AngularFormLesson1
 
+This project was used during an Angular bootcamp at ValleyWorx.
+It is now being hosted on AWS S3
+
+# Angular Version
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
 ## Development server
