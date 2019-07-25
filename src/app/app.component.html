@@ -112,10 +112,12 @@
           </div>
         </div>
 
-
-        <span
-            *ngIf="!signupForm.valid && signupForm.touched"
-            class="form-text text-muted">Please enter valid data!</span>
+        <div class="row justify-content-center">
+          <span
+              *ngIf="!signupForm.valid && signupForm.touched"
+              class="form-text text-muted col-12 text-center"
+              >Please enter valid data!</span>
+        </div>
 
         <div class="row justify-content-center">
           <button
