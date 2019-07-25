@@ -1,6 +1,6 @@
 # AngularFormLesson1
 
-This project was used during an Angular bootcamp at ValleyWorx.
+This project was used during an Angular bootcamp at ValleyWorx (Summer 2019).
 
 It is now being hosted on AWS S3 with CloudFront
 
