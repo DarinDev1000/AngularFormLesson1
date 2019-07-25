@@ -98,33 +98,38 @@
             class="form-text text-muted">Please enter a valid Zip Code!</span>
         </div>
 
-        <div formArrayName="skills">
+        <div formArrayName="skills" class="mb-4">
           <h4>Your Skills</h4>
-          <button
-            class="btn btn-secondary"
-            type="button"
-            (click)="onAddSkill()">Add Skill</button>
+          <div class="row justify-content-center">
+            <button
+              class="btn btn-secondary col-6 mb-2"
+              type="button"
+              (click)="onAddSkill()">Add Skill</button>
+          </div>
           <div class="form-group"
           *ngFor="let skillControl of signupForm.get('skills').controls; let i = index">
             <input type="text" class="form-control" [formControlName]="i">
           </div>
         </div>
 
-        <br>
 
         <span
             *ngIf="!signupForm.valid && signupForm.touched"
             class="form-text text-muted">Please enter valid data!</span>
-        <button
-        class="btn btn-primary"
-        type="submit"
-        [disabled]="!signupForm.valid">Submit</button>
 
-        <br>
-        <button
-          class="btn btn-danger"
-          type="button"
-          (click)="onReset()">Reset</button>
+        <div class="row justify-content-center">
+          <button
+            class="btn btn-primary col-6 m-1"
+            type="submit"
+            [disabled]="!signupForm.valid">Submit</button>
+        </div>
+
+        <div class="row justify-content-center">
+          <button
+            class="btn btn-danger col-6 m-1"
+            type="button"
+            (click)="onReset()">Reset</button>
+        </div>
 
       </form>
     </div>
