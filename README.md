@@ -1,6 +1,8 @@
 # AngularFormLesson1
 
-This project was used during an Angular bootcamp at ValleyWorx (Summer 2019).
+This project was used during an Angular bootcamp at ValleyWorx (Summer 2019) to teach Angular Forms.
+
+I have also used it in a tutorial for hosting on AWS. [Hosting a SPA (Angular/React/Vue) or static website with Amazon Web Services](https://medium.com/@darindev1000/hosting-angular-or-a-static-website-with-amazon-web-services-625d564b3464?source=friends_link&sk=b4864a042d6af15e13ed3f58c7d612e1)
 
 It is now being hosted on AWS S3 with CloudFront and Route 53 at https://form-lesson.darindev1000.com
 
